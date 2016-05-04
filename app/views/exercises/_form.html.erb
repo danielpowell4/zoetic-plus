@@ -1,0 +1,57 @@
+<%= form_for(@exercise) do |f| %>
+  <% if @exercise.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@exercise.errors.count, "error") %> prohibited this exercise from being saved:</h2>
+
+      <ul>
+      <% @exercise.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :category %><br>
+    <%= f.number_field :category %>
+  </div>
+  <div class="field">
+    <%= f.label :exercise %><br>
+    <%= f.text_field :exercise %>
+  </div>
+  <div class="field">
+    <%= f.label :onesided %><br>
+    <%= f.check_box :onesided %>
+  </div>
+  <div class="field">
+    <%= f.label :compound %><br>
+    <%= f.check_box :compound %>
+  </div>
+  <div class="field">
+    <%= f.label :isolation %><br>
+    <%= f.check_box :isolation %>
+  </div>
+  <div class="field">
+    <%= f.label :primary %><br>
+    <%= f.text_area :primary %>
+  </div>
+  <div class="field">
+    <%= f.label :secondary %><br>
+    <%= f.text_area :secondary %>
+  </div>
+  <div class="field">
+    <%= f.label :impact %><br>
+    <%= f.number_field :impact %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :tip %><br>
+    <%= f.text_area :tip %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @exercise.category %>
+</p>
+
+<p>
+  <strong>Exercise:</strong>
+  <%= @exercise.exercise %>
+</p>
+
+<p>
+  <strong>Onesided:</strong>
+  <%= @exercise.onesided %>
+</p>
+
+<p>
+  <strong>Compound:</strong>
+  <%= @exercise.compound %>
+</p>
+
+<p>
+  <strong>Isolation:</strong>
+  <%= @exercise.isolation %>
+</p>
+
+<p>
+  <strong>Primary:</strong>
+  <%= @exercise.primary %>
+</p>
+
+<p>
+  <strong>Secondary:</strong>
+  <%= @exercise.secondary %>
+</p>
+
+<p>
+  <strong>Impact:</strong>
+  <%= @exercise.impact %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @exercise.description %>
+</p>
+
+<p>
+  <strong>Tip:</strong>
+  <%= @exercise.tip %>
+</p>
+
+<%= link_to 'Edit', edit_exercise_path(@exercise) %> |
+<%= link_to 'Back', exercises_path %>
