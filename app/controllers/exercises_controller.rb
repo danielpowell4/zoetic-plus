@@ -8,6 +8,9 @@ class ExercisesController < ApplicationController
     @exercises = Exercise.all
   end
 
+  def underIndex
+    @exercises = Exercise.all
+  end
   # GET /exercises/1
   # GET /exercises/1.json
   def show

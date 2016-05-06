@@ -1,0 +1,20 @@
+<%= render 'pages/landing' unless user_signed_in? %>
+
+<% if user_signed_in? %>
+
+    <div>
+      <div>
+        <h4>Workout Generator</h4>
+        <%= link_to "Plan Workout", workout_generator_path %>
+      </div>
+      <div>
+        <h4>Learn Exercises</h4>
+        <%= link_to "Exercise Library", library_path %>
+      </div>
+      <div>
+        <h4>Plan Meals</h4>
+        <%= link_to 'Recipes', "http://zoeticcoaching.com/recipes" %>
+      </div>
+    </div>
+
+<% end %>

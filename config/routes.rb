@@ -5,9 +5,13 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  get 'workout-generator' => 'workout_gen#index'
-  root 'pages#welcome'
-  get 'home' => 'pages#landing' 
+
+  root 'pages#dashboard'
+  get 'exercises' => 'exercises#index'
+  get 'library' => 'exercises#underIndex'
+  get "about" => "pages#about"
+  get 'workout_generator' => 'workout_gen#index'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
