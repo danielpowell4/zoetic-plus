@@ -21,7 +21,7 @@
   <% @exercises.each do |exercise| %>
   <%= link_to exercise do %>
     <div class="exercise-item">
-      <img alt="stock image" src="">
+      <%= image_tag exercise.snapshot.url(:medium), :class => "" %>
       <h4><%= exercise.exercise %></h4>
       <p><%= exercise.category %></p>
     </div>

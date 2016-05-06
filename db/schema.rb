@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160504213005) do
+ActiveRecord::Schema.define(version: 20160506213855) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,8 +28,13 @@ ActiveRecord::Schema.define(version: 20160504213005) do
     t.integer  "impact"
     t.text     "description"
     t.text     "tip"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                                                                  null: false
+    t.datetime "updated_at",                                                                  null: false
+    t.string   "snapshot_file_name"
+    t.string   "snapshot_content_type"
+    t.integer  "snapshot_file_size"
+    t.datetime "snapshot_updated_at"
+    t.string   "video",                 default: "https://www.youtube.com/embed/LSvkG2xa3xs"
   end
 
   create_table "users", force: :cascade do |t|

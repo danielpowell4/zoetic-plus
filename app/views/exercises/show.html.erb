@@ -69,10 +69,7 @@ ul{
 </style>
 
 <section class="main">
-  <video class="video" width="320" autoplay loop>
-    <source src="cut-3.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+<iframe width="420" height="315" src="<%= @exercise.video %>" frameborder="0" allowfullscreen></iframe>
   <div class="title">
     <h1>Push Up</h1>
     <h6> <%=  @exercise.category %></h6>
