@@ -7,7 +7,7 @@ gem 'rails', '4.2.4'
 gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
-gem 'devise'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 gem 'bootstrap-sass', '~> 3.3.6'
@@ -34,6 +34,21 @@ gem "paperclip", "~> 4.2"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# use devise for users
+gem 'devise'
+
+# use amazon s3
+gem 'aws-sdk', '< 2.0'
+
+# use jquery masonry
+gem 'masonry-rails', '~> 0.2.0'
+
+# use pagination gem
+gem 'will_paginate', '~> 3.0.5'
+
+# use pretty pagination
+gem 'will_paginate-bootstrap'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -46,4 +61,3 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
-

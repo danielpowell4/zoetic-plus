@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<% if current_user.admin? %>
+  <%= link_to 'New Exercise', new_exercise_path %>
+<% end %>
+
 <h1>Listing Exercises</h1>
 
 <table>
@@ -44,4 +48,6 @@
 
 <br>
 
-<%= link_to 'New Exercise', new_exercise_path %>
+<div class="center">
+   <%= will_paginate @exercises, renderer: BootstrapPagination::Rails %>
+</div>

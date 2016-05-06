@@ -1,54 +1,171 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @exercise.category %>
-</p>
 
-<p>
-  <strong>Exercise:</strong>
-  <%= @exercise.exercise %>
-</p>
+<style>
+body, h1, h2, h3, h4, h5, h6, p{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
 
-<p>
-  <strong>Onesided:</strong>
-  <%= @exercise.onesided %>
-</p>
+h1, h2, h3, h4, h5, h6{
 
-<p>
-  <strong>Compound:</strong>
-  <%= @exercise.compound %>
-</p>
+}
+p, li{
 
-<p>
-  <strong>Isolation:</strong>
-  <%= @exercise.isolation %>
-</p>
+}
+body{
+  background-color: #555;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
 
-<p>
-  <strong>Primary:</strong>
-  <%= @exercise.primary %>
-</p>
+ul{
+  margin: 0;
+}
+.main{
+  padding: 1em;
+  max-width: 375px;
+  width: 100%;
+  min-width: 260px;
+  margin: 1em auto;
+  background-color: #fdf6ee;
+  border-radius: 8px;
+  border: #fff solid 2px;
+  box-sizing: border-box;
+}
 
-<p>
-  <strong>Secondary:</strong>
-  <%= @exercise.secondary %>
-</p>
+.main .video{
+  max-width: 600px;
+  width: 100%;
+  min-width: 280px;
+}
 
-<p>
-  <strong>Impact:</strong>
-  <%= @exercise.impact %>
-</p>
+.main .title {
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: row;
+  justify-content: space-between;
+  padding: 1em 0 0;
+}
 
-<p>
-  <strong>Description:</strong>
-  <%= @exercise.description %>
-</p>
+.main .title .intensity{
+  text-align: center;
+}
 
-<p>
-  <strong>Tip:</strong>
-  <%= @exercise.tip %>
-</p>
+.main h4{
+  padding: .3em 0;
+}
 
-<%= link_to 'Edit', edit_exercise_path(@exercise) %> |
-<%= link_to 'Back', exercises_path %>
+.main .details-container .tips-container,
+.main .details-container .writeup-container,
+.main .details-container .muscle-groups-container
+{
+  padding: 0 0 .6em;
+}
+
+</style>
+
+<section class="main">
+  <video class="video" width="320" autoplay loop>
+    <source src="cut-3.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="title">
+    <h1>Push Up</h1>
+    <h6> <%=  @exercise.category %></h6>
+    <div class="intensity">
+      <h4><%=  @exercise.intensity %></h4>
+      <h6>Intensity</h6>
+      <h6></h6>
+    </div>
+  </div>
+  <div class="details-container">
+    <div class="tips-container">
+      <h4>Tips:</h4>
+      <ul class="tips-list">
+        <%= @exercise.tip %>
+      </ul>
+    </div>
+    <div class="writeup-container">
+      <h4>Instructions</h4>
+      <p><%= @exercise.description %></p>
+    </div>
+    <div class="muscle-groups-container">
+      <h4>Muscle Groups</h4>
+        <p>Primary:  <%= @exercise.primary %> </p>
+        <p>Secondary: <%= @exercise.secondary %></p>
+    </div>
+    <div class="muscle-groups-container">
+      <h4>Muscle Groups</h4>
+        <p>Primary:  <%= @exercise.primary %> </p>
+        <p>Secondary: <%= @exercise.secondary %></p>
+    </div>
+  </div>
+</section>
+
+<!--
+
+<div>
+    <p>
+      <strong>Category:</strong>
+      <%=  @exercise.category %><
+    </p>
+
+    <p>
+      <strong>Exercise:</strong>
+      <%= @exercise.exercise %>
+    </p>
+
+    <p>
+      <strong>Onesided:</strong>
+      <%= @exercise.onesided %>
+    </p>
+
+    <p>
+      <strong>Compound:</strong>
+      <%= @exercise.compound %>
+    </p>
+
+    <p>
+      <strong>Isolation:</strong>
+      <%= @exercise.isolation %>
+    </p>
+
+    <p>
+      <strong>Primary:</strong>
+      <%= @exercise.primary %>
+    </p>
+
+    <p>
+      <strong>Secondary:</strong>
+      <%= @exercise.secondary %>
+    </p>
+
+    <p>
+      <strong>Impact:</strong>
+      <%= @exercise.impact %>
+    </p>
+
+    <p>
+      <strong>Description:</strong>
+      <%= @exercise.description %>
+    </p>
+
+    <p>
+      <strong>Tip:</strong>
+      <%= @exercise.tip %>
+    </p>
+
+</div>
+-->
+<div>
+
+  <% if current_user.admin? %>
+  <%= link_to 'Edit', edit_exercise_path(@exercise) %> |
+  <% end %>
+  <%= link_to 'Back', exercises_path %>
+
+</div>
