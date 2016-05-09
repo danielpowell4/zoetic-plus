@@ -38,9 +38,6 @@ gem "paperclip", "~> 4.2"
 # use devise for users
 gem 'devise'
 
-# use amazon s3
-gem 'aws-sdk', '< 2.0'
-
 # use jquery masonry
 gem 'masonry-rails', '~> 0.2.0'
 
@@ -49,6 +46,15 @@ gem 'will_paginate', '~> 3.0.5'
 
 # use pretty pagination
 gem 'will_paginate-bootstrap'
+
+# knockout for workout_gen
+gem 'knockoutjs-rails', '~> 3.4'
+
+# jquery UI
+gem 'jquery-ui-rails', '~> 5.0', '>= 5.0.5'
+
+# underscore
+gem 'underscore-rails', '~> 1.8', '>= 1.8.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

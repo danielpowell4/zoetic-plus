@@ -13,5 +13,8 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
+//= require jquery-ui
+//= require underscore
+//= require knockout
 //= require turbolinks
 //= require_tree .
