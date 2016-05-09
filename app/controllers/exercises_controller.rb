@@ -5,7 +5,7 @@ class ExercisesController < ApplicationController
   # GET /exercises
   # GET /exercises.json
   def index
-    @exercises = Exercise.all
+    @exercises = Exercise.all.order("category DESC")
   end
 
   def underIndex

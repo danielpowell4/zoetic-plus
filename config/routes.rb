@@ -7,8 +7,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
 
   root 'pages#dashboard'
-  get 'exercises' => 'exercises#index'
-  get 'library' => 'exercises#underIndex'
+  get 'library' => 'exercises#index'
+  get 'edit_database' => 'exercises#underIndex'
   get "about" => "pages#about"
   get 'workout_generator' => 'workout_gen#index'
 
