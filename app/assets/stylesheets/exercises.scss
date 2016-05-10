@@ -1,3 +1,70 @@
 // Place all the styles related to the exercises controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+ody, h1, h2, h3, h4, h5, h6, p{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6{
+
+}
+p, li{
+
+}
+body{
+  background-color: #555;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+ul{
+  margin: 0;
+}
+.name-cat-wrap {
+    margin: 0 1rem;
+}
+.main{
+  padding: 1em;
+  max-width: 375px;
+  width: 100%;
+  min-width: 260px;
+  margin: 1em auto;
+  background-color: #fdf6ee;
+  border-radius: 8px;
+  border: #fff solid 2px;
+  box-sizing: border-box;
+}
+
+.main .video{
+  max-width: 600px;
+  width: 100%;
+  min-width: 280px;
+}
+
+.main .title {
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: row;
+  justify-content: space-between;
+  padding: 1em 0 0;
+}
+
+.main .title .intensity{
+  text-align: center;
+}
+
+.main h4{
+  padding: .3em 0;
+}
+
+.main .details-container .tips-container,
+.main .details-container .writeup-container,
+.main .details-container .muscle-groups-container
+{
+  padding: 0 0 .6em;
+}
