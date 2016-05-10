@@ -71,11 +71,6 @@ class ExercisesController < ApplicationController
       @exercise = Exercise.find(params[:id])
     end
 
-    def require_login
-      unless current_user
-        redirect_to root_url
-      end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def exercise_params
       params.require(:exercise).permit(:category, :exercise, :onesided, :compound, :isolation, :primary, :secondary, :impact, :description, :tip, :snapshot, :video)
@@ -88,6 +83,13 @@ class ExercisesController < ApplicationController
       redirect_to root_path
     end
     # if current_user is admin he will proceed to edit action
+
+  def require_login
+    unless current_user
+      redirect_to root_path
+    end
+  end
+
   end
 
 end

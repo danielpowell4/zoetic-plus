@@ -9,8 +9,9 @@ class WorkoutGenController < ApplicationController
 
 	  def require_login
 	    unless current_user
-	      redirect_to root_url
+	      redirect_to root_path
 	    end
 	  end
+	
 
 end
