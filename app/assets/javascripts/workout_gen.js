@@ -34,6 +34,9 @@ var todaysWorkout = ko.observable(0); // default hidden
     var todaysFirstCircuit = ko.observableArray();
     var todaysSecondCircuit = ko.observableArray();
     var todaysThirdCircuit = ko.observableArray();
+    var todaysWarmUp = ko.observableArray();
+    var todaysCoolDown = ko.observableArray();
+
 
     /* -- verbose intensity filter -- */
 
@@ -61,6 +64,25 @@ var todaysWorkout = ko.observable(0); // default hidden
 
     /* -- end intensity Filter -- */
 
+    /* -- assign warmUp, coolDown -- */
+
+    function generateWarmUpCoolDown(){
+
+      todaysWarmUp.removeAll();
+      todaysCoolDown.removeAll();
+
+      filteredWarmUps = _.where(EXERCISES, {category: 'warmUp'});
+      var randomWarmUp = _.sample(filteredWarmUps);
+      todaysWarmUp.push(randomWarmUp);
+
+      filteredCoolDowns = _.where(EXERCISES, {category: 'coolDown'});
+      var randomCoolDown = _.sample(filteredCoolDowns);
+      todaysCoolDown.push(randomCoolDown);
+
+      }
+
+
+
     /* -- assign ko.observables needed for 15 min workout -- */
     function generateFifteen() {
 
@@ -87,6 +109,9 @@ var todaysWorkout = ko.observable(0); // default hidden
 
     /* assign variables needed for 45 min */
     function generateFourtyFive(){
+
+      filterByIntensity();
+
       todaysFirstCircuit.removeAll();   // clearWorkout
       todaysSecondCircuit.removeAll();  // clearWorkout
 
@@ -116,6 +141,9 @@ var todaysWorkout = ko.observable(0); // default hidden
     }
 
     function generateSixty(){
+
+      filterByIntensity();
+
       todaysFirstCircuit.removeAll();   // clearWorkout
       todaysSecondCircuit.removeAll();  // clearWorkout
       todaysThirdCircuit.removeAll();  // clearWorkout
@@ -155,6 +183,7 @@ var todaysWorkout = ko.observable(0); // default hidden
 
 $('#generate').click(function(){
   todaysWorkout(0);
+  generateWarmUpCoolDown();
   generateFifteen();
   generateFourtyFive();
   generateSixty();

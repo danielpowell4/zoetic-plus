@@ -1,0 +1,99 @@
+
+
+        <!-- Fifteen Circuit -->
+        <div class="circuit">
+
+
+          <div class="overview row">
+            <h2 class="title">15 MINUTE WORKOUT</h1>
+          </div>
+
+          <div class="warm-up">
+            <div class="cycle-intro">
+              <h3 class="title">Warm Up     <span class="glyphicon glyphicon-heart-empty" aria-hidden="true"></span></h3>
+              <!--<h4 class="time">4 Minutes</h4>-->
+              <p class="exercise-time">4 MIN</p>
+            </div>
+
+            <div data-bind="foreach: todaysWarmUp">
+
+              <div class="exercise-wrapper row">
+                <div class="col-sm-1"></div>
+                <div class="exercise-category-wrapper col-sm-4">
+                  <h3 class="exercise-category">Warm Up</h3>
+                </div>
+                <div class="col-sm-1"></div>
+                <div class="exercise-detail-wrapper col-sm-6">
+                  <h4 class="exercise-name" data-bind="text: $data.exercise"></h4>
+                  <a data-bind="attr: { href: $data.url }" target="_blank">Details</a>
+                </div>
+
+              </div> <!-- close exercise-wrapper -->
+
+            </div>
+
+          </div>
+
+          <div class="cycle-wrapper row">
+
+            <div class="cycle-intro">
+              <h3 class="title">Cycle 1 + 2     <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></h3>
+              <!--<h4 class="time">4 Minutes</h4>-->
+              <p class="exercise-time">For each exercise 45 SEC ON + 20 OFF</p>
+            </div>
+
+            <div class="cycle row" data-bind="foreach: todaysFifteenWorkout">
+
+              <div class="exercise-wrapper row">
+                <div class="col-sm-1"></div>
+                <div class="exercise-category-wrapper col-sm-4">
+                  <h3 class="exercise-category" data-bind="text: $data.category"></h3>
+                </div>
+                <div class="col-sm-1"></div>
+                <div class="exercise-detail-wrapper col-sm-6">
+                  <h4 class="exercise-name" data-bind="text: $data.exercise"></h4>
+                  <a data-bind="attr: { href: $data.url }" target="_blank">Details</a>
+                </div>
+
+              </div> <!-- close exercise-wrapper -->
+
+            </div> <!-- close cycle 1 -->
+
+          </div> <!-- close cycle wrapper -->
+
+
+        <!-- water break -->
+        <div class="cycle-intro">
+          <h3 class="title">Water Break     <span class="glyphicon glyphicon-tint" aria-hidden="true"></span></h3>
+          <!--<h4 class="time">4 Minutes</h4>-->
+          <p class="exercise-time">30 Seconds After Each Cycle</p>
+        </div>
+
+
+          <div class="cool-down">
+            <div class="cycle-intro">
+              <h3 class="title">Cool Down     <span class="glyphicon glyphicon-star" aria-hidden="true"></span></h3>
+              <!--<h4 class="time">4 Minutes</h4>-->
+              <p class="exercise-time">1.5 min</p>
+            </div>
+
+            <div data-bind="foreach: todaysCoolDown">
+
+              <div class="exercise-wrapper row">
+                <div class="col-sm-1"></div>
+                <div class="exercise-category-wrapper col-sm-4">
+                  <h3 class="exercise-category">Cool Down</h3>
+                </div>
+                <div class="col-sm-1"></div>
+                <div class="exercise-detail-wrapper col-sm-6">
+                  <h4 class="exercise-name" data-bind="text: $data.exercise"></h4>
+                  <a data-bind="attr: { href: $data.url }" target="_blank">Details</a>
+                </div>
+
+              </div> <!-- close exercise-wrapper -->
+
+            </div>
+
+          </div>
+
+      </div> <!-- close 15 min -->
