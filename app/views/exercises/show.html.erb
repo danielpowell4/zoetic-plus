@@ -12,88 +12,39 @@
     <div class="intensity">
       <h4><%=  @exercise.intensity %></h4>
       <h6>Intensity</h6>
-      <h6></h6>
     </div>
   </div>
   <div class="details-container">
-    <div class="tips-container">
-      <h4>Tips:</h4>
-      <ul class="tips-list">
-        <%= @exercise.tip %>
-      </ul>
-    </div>
-    <div class="writeup-container">
-      <h4>Instructions</h4>
-      <p><%= @exercise.description %></p>
-    </div>
-    <div class="muscle-groups-container">
-      <h4>Muscle Groups</h4>
-        <p>Primary:  <%= @exercise.primary %> </p>
-        <p>Secondary: <%= @exercise.secondary %></p>
-    </div>
-    <div class="muscle-groups-container">
-      <h4>Muscle Groups</h4>
-        <p>Primary:  <%= @exercise.primary %> </p>
-        <p>Secondary: <%= @exercise.secondary %></p>
-    </div>
+
+    <% if @exercise.tip %>
+      <div class="tips-container">
+        <h4>Tips:</h4>
+        <ul class="tips-list">
+          <%= @exercise.tip %>
+        </ul>
+      </div>
+    <% end %>
+
+    <% if @exercise.description %>
+      <div class="writeup-container">
+        <h4>Instructions</h4>
+        <p><%= @exercise.description %></p>
+      </div>
+    <% end %>
+
+    <% if @exercise.primary %>
+        <div class="muscle-groups-container">
+          <h4>Muscle Groups</h4>
+            <p>Primary:  <%= @exercise.primary %> </p>
+            <% if @exercise.secondary %>
+                <p>Secondary: <%= @exercise.secondary %></p>
+            <% end %>
+        </div>
+    <% end %>
+
   </div>
 </section>
 
-<!--
-
-<div>
-    <p>
-      <strong>Category:</strong>
-      <%=  @exercise.category %><
-    </p>
-
-    <p>
-      <strong>Exercise:</strong>
-      <%= @exercise.exercise %>
-    </p>
-
-    <p>
-      <strong>Onesided:</strong>
-      <%= @exercise.onesided %>
-    </p>
-
-    <p>
-      <strong>Compound:</strong>
-      <%= @exercise.compound %>
-    </p>
-
-    <p>
-      <strong>Isolation:</strong>
-      <%= @exercise.isolation %>
-    </p>
-
-    <p>
-      <strong>Primary:</strong>
-      <%= @exercise.primary %>
-    </p>
-
-    <p>
-      <strong>Secondary:</strong>
-      <%= @exercise.secondary %>
-    </p>
-
-    <p>
-      <strong>Impact:</strong>
-      <%= @exercise.impact %>
-    </p>
-
-    <p>
-      <strong>Description:</strong>
-      <%= @exercise.description %>
-    </p>
-
-    <p>
-      <strong>Tip:</strong>
-      <%= @exercise.tip %>
-    </p>
-
-</div>
--->
 <div>
 
   <% if current_user.admin? %>

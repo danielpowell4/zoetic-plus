@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :category %><br>
-    <%= f.number_field :category %>
+    <%= f.select :category, Exercise.categories.map{ |k, v| [k.humanize, k]} %>
   </div>
   <div class="field">
     <%= f.label :exercise %><br>
