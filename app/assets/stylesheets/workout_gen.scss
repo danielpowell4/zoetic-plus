@@ -13,7 +13,6 @@ body{
   box-sizing: border-box;
   margin: auto;
   font-family: sans-serif;
-  text-transform: capitalize;
 }
 
 .fifteenMin, .fourtyFiveMin, .sixtyMin {
@@ -22,6 +21,7 @@ body{
   width: 100%;
   margin: 0 auto;
   text-align: center;
+  text-transform: capitalize;
 }
 
 .flex-container {
