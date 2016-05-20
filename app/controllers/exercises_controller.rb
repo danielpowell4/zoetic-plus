@@ -9,7 +9,7 @@ class ExercisesController < ApplicationController
   end
 
   def underIndex
-    @exercises = Exercise.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 24)
+    @exercises = Exercise.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 55)
   end
   # GET /exercises/1
   # GET /exercises/1.json

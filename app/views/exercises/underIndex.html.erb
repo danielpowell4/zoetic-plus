@@ -6,17 +6,19 @@
 
 <h1>Listing Exercises</h1>
 
-<table>
+<table class="table table-hover">
   <thead>
     <tr>
       <th>Category</th>
       <th>Exercise</th>
+      <th>Intensity</th>
+      <!--
       <th>Onesided</th>
       <th>Compound</th>
       <th>Isolation</th>
       <th>Primary</th>
       <th>Secondary</th>
-      <th>Impact</th>
+      <th>Impact</th>-->
       <th>Description</th>
       <th>Tip</th>
       <th colspan="3"></th>
@@ -28,12 +30,14 @@
       <tr>
         <td><%= exercise.category %></td>
         <td><%= exercise.exercise %></td>
+        <td><%= exercise.intensity %></td>
+        <!--
         <td><%= exercise.onesided %></td>
         <td><%= exercise.compound %></td>
         <td><%= exercise.isolation %></td>
         <td><%= exercise.primary %></td>
         <td><%= exercise.secondary %></td>
-        <td><%= exercise.impact %></td>
+        <td><%= exercise.impact %></td>-->
         <td><%= exercise.description %></td>
         <td><%= exercise.tip %></td>
         <td><%= link_to 'Show', exercise %></td>

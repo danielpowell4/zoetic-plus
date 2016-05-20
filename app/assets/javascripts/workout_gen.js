@@ -62,6 +62,7 @@ var todaysWorkout = ko.observable(0); // default hidden
         for(var i=0; i<justMore.length; i++){
           filteredIntensity.push(justMore[i])
         };
+
     }
 
     /* -- end intensity Filter -- */
@@ -83,8 +84,15 @@ var todaysWorkout = ko.observable(0); // default hidden
 
       jQuery(exerciseCategories).each(function(index){
         var filteredList = _.where(filteredIntensity(), {category: exerciseCategories[index]});
-        var randomExercise = _.sample(filteredList);
-        circuitArray.push(randomExercise);
+        if (filteredList.length >= 1 ){
+          var randomExercise = _.sample(filteredList);
+          if (randomExercise){
+            circuitArray.push(randomExercise);
+          }
+        }
+        else {
+          console.log('need more ' + exerciseCategories[index]);
+        }
       });
 
       /* -- randomize order -- */
@@ -100,25 +108,26 @@ $('#generate').click(function(){
   switch (selectedWorkout()) {
     case 1:
       generateCircuit(firstCircuit(), limitedExerciseCats, 0);
+      todaysWorkout(1);
       break;
     case 2:
       generateCircuit(firstCircuit(), allExerciseCats, -1);
       generateCircuit(secondCircuit(), allExerciseCats, 0);
+      todaysWorkout(1);
       break;
     case 3:
       generateCircuit(firstCircuit(), allExerciseCats, 0);
-      generateCircuit(secondCircuit(), allExerciseCats, 1);
+      generateCircuit(secondCircuit(), allExerciseCats, +1);
       generateCircuit(thirdCircuit(), allExerciseCats, -1);
-      console.log(firstCircuit()[1].intensity);
-      console.log(secondCircuit()[1].intensity);
-      console.log(thirdCircuit()[1].intensity);
-      console.log('---');
+      todaysWorkout(1);
+      //console.log(firstCircuit()[1].intensity);
+      //console.log(secondCircuit()[1].intensity);
+      //console.log(thirdCircuit()[1].intensity);
+      //console.log('---');
       break;
     default:
       alert('Please select how many circuits you would like to do.')
   }
-
-  todaysWorkout(1);
 
 });
 
