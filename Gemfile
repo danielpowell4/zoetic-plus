@@ -10,8 +10,8 @@ gem 'sass-rails', '~> 5.0'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-gem 'aws-sdk', '< 2.0'
 gem 'bootstrap-sass', '~> 3.3.6'
+
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
@@ -25,7 +25,9 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem "paperclip", "~> 4.2"
+gem 'paperclip', '~> 4.3', '>= 4.3.6'
+gem 'aws-sdk', '~> 2.3', '>= 2.3.7'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
