@@ -38,7 +38,10 @@ body{
 .todaysWorkout {
     margin: 2rem auto 6rem;
 }
-.title, .overview, .warmup, .circuit, .cycle-wrapper{
+ .cycle-wrapper {
+   text-transform: capitalize;
+ }
+.title, .overview, .warmup, .circuit{
   margin-bottom: 1em;
   text-transform: uppercase;
   font-weight: bold;
@@ -125,17 +128,24 @@ body{
   width: 80%;
   max-width: 260px;
   min-width: 180px;
-  margin: 0 auto
+  margin: 2.5rem auto;
 }
+
 #generate {
   text-align: center;
   max-width: 260px;
-  margin: 30px auto;
+  margin: 4rem auto;
   padding: 16px;
   border-radius: 5px;
   background-color: #0041a0;
   color: white;
-  display: block
+  display: block;
+  cursor: pointer;
+  transition: ease all 300ms;
+}
+#generate:hover{
+  background-color: #1b9e00;
+  transition: ease all 300ms;
 }
 
 #workout{
@@ -149,4 +159,23 @@ body{
 
 #workout h4{
   margin: 18px 0
+}
+
+#intensitySlider{
+  cursor: pointer;
+}
+.ui-widget-content {
+    border: 1px solid #aaaaaa;
+    color: #222222;
+    background: linear-gradient(80deg, green, yellow 60%, orange, red, black 120%);
+    cursor: pointer;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    border: 1px solid #d3d3d3;
+    font-weight: normal;
+    color: #555555;
+    border-radius: 40%;
+    background: rgba(0,0,0,0.66);
+    cursor: pointer;
 }

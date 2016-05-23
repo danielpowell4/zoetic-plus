@@ -5,7 +5,7 @@ $.ajax({
   url: '/exercises.json',
   success: function(data) {
     EXERCISES = data;
-    //console.log(EXERCISES);
+    console.log(EXERCISES);
   }
 });
 

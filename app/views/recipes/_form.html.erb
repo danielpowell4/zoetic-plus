@@ -19,6 +19,11 @@
     <%= f.input :description, input_html: { class: 'form-control' } %>
     <%= f.input :image, input_html: { class: 'form-control' } %>
 
+    <div class="field">
+      <%= f.label :tag_list, "Tags (seperated by commas)" %><br />
+      <%= f.text_field :tag_list %>
+    </div>
+
     <div class="row">
       <div class="col-md-12">
         <h3>Reasons To Eat</h3>

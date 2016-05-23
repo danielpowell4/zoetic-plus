@@ -51,11 +51,23 @@
       </div>
     </div>
   </div>
+
+  <div class="row">
+    <div class="col-md-12 tag-list">
+      <h4>Tags</h4>
+      <p>
+        <%= raw @recipe.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+      </p>
+    </div>
+  </div>
+
   <div class="row">
     <div class="col-md-12">
       <%= link_to "Back", root_path, class: "btn btn-default" %>
-      <%= link_to "Edit", edit_recipe_path, class: "btn btn-default" %>
-      <%= link_to "Delete", recipe_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-default" %>
+      <% if user_signed_in? && current_user.admin? %>
+        <%= link_to "Edit", edit_recipe_path, class: "btn btn-default" %>
+        <%= link_to "Delete", recipe_path, method: :delete, data: {confirm: "Are you sure?" }, class: "btn btn-default" %>
+      <% end %>
     </div>
   </div>
 </div>

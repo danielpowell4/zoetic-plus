@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get "about" => "pages#about"
   get 'workout_generator' => 'workout_gen#index'
 
+  get 'tags/:tag', to: 'recipes#index', as: :tag 
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

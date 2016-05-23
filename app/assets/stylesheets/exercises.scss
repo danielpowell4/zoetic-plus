@@ -68,3 +68,23 @@ ul{
 {
   padding: 0 0 .6em;
 }
+
+.exercises-wrapper{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  a{
+    background-color: #fff;
+    margin-bottom: .375rem;
+  }
+}
+.exercise-item{
+  width: 260px;
+  margin: 1rem;
+  text-align: center;
+  text-transform: capitalize;
+  h4{
+    padding: auto 1rem;
+  }
+}

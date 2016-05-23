@@ -4,19 +4,8 @@
   <%= link_to 'New Exercise', new_exercise_path %>
 <% end %>
 
-<h1>Listing Exercises</h1>
-<style>
-.exercises-wrapper{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.exercise-item{
-  width: 260px;
-  margin: 1rem;
-}
-</style>
+<h1 class="title">Full Exercise Library</h1>
+
 <section class="exercises-wrapper">
   <% @exercises.each do |exercise| %>
   <%= link_to exercise do %>

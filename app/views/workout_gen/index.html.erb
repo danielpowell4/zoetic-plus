@@ -1,22 +1,22 @@
 
     <div class="controls">
         <div class="time-container">
-          <p class="text-center">Circuits</p>
+          <h4 class="text-center">Circuits</h4>
           <div class="btn-group btn-group-justified" role="group" aria-label="...">
               <div class="btn-group" role="group">
-                <button type="button" class="btn btn-default" data-bind="click: function() {selectedWorkout(1)}">1</button>
+                <button type="button" class="btn btn-default" data-bind="click: function() {selectedWorkout(1); todaysWorkout(0)}">1</button>
               </div>
               <div class="btn-group" role="group">
-                <button type="button" class="btn btn-default" data-bind="click: function() {selectedWorkout(2)}">2</button>
+                <button type="button" class="btn btn-default" data-bind="click: function() {selectedWorkout(2); todaysWorkout(0)}">2</button>
               </div>
               <div class="btn-group" role="group">
-                <button type="button" class="btn btn-default" data-bind="click: function() {selectedWorkout(3)}">3</button>
+                <button type="button" class="btn btn-default" data-bind="click: function() {selectedWorkout(3); todaysWorkout(0)}">3</button>
               </div>
           </div>
         </div>
 
         <div class="intensity-container">
-          <p class="text-center"><strong>Intensity: <span id="slide-value" data-bind="text: selectedIntensity"></span></strong></p>
+          <h4 class="text-center">Intensity<!--<span id="slide-value" data-bind="text: selectedIntensity"></span>--></h4>
           <div id="intensitySlider"></div>
         </div>
         <btn id="generate" class="center"><strong>GENERATE WORKOUT</strong></btn>
