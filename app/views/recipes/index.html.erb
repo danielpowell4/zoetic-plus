@@ -1,4 +1,10 @@
 
+<% if user_signed_in? && current_user.admin? %>
+  <div class="new-link">
+    <%= link_to 'New Recipe', new_recipe_path %>
+  </div>
+<% end %>
+
     <% @recipe.each_slice(3) do |recipes| %>
       <div class="row">
         <% recipes.each do |recipe| %>
