@@ -17,4 +17,5 @@
 //= require underscore
 //= require knockout
 //= require turbolinks
+//= require cocoon
 //= require_tree .

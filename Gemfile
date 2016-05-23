@@ -56,6 +56,15 @@ gem 'jquery-ui-rails', '~> 5.0', '>= 5.0.5'
 # underscore
 gem 'underscore-rails', '~> 1.8', '>= 1.8.3'
 
+# simple form
+gem 'simple_form', '~> 3.2', '>= 3.2.1'
+
+# cocoon for nested forms
+gem 'cocoon', '~> 1.2', '>= 1.2.9'
+
+#tags
+gem 'acts-as-taggable-on', '~> 3.5'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

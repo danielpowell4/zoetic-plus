@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160506213855) do
+ActiveRecord::Schema.define(version: 20160523005004) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "directions", force: :cascade do |t|
+    t.text     "step"
+    t.integer  "recipe_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "directions", ["recipe_id"], name: "index_directions_on_recipe_id", using: :btree
 
   create_table "exercises", force: :cascade do |t|
     t.integer  "category"
@@ -35,6 +44,37 @@ ActiveRecord::Schema.define(version: 20160506213855) do
     t.integer  "snapshot_file_size"
     t.datetime "snapshot_updated_at"
     t.string   "video",                 default: "https://www.youtube.com/embed/LSvkG2xa3xs"
+  end
+
+  create_table "ingredients", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "recipe_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "ingredients", ["recipe_id"], name: "index_ingredients_on_recipe_id", using: :btree
+
+  create_table "reasons", force: :cascade do |t|
+    t.text     "title"
+    t.string   "description"
+    t.integer  "recipe_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "reasons", ["recipe_id"], name: "index_reasons_on_recipe_id", using: :btree
+
+  create_table "recipes", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -59,4 +99,7 @@ ActiveRecord::Schema.define(version: 20160506213855) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "directions", "recipes"
+  add_foreign_key "ingredients", "recipes"
+  add_foreign_key "reasons", "recipes"
 end
