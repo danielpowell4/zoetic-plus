@@ -19,6 +19,12 @@ Rails.application.configure do
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
   Paperclip.options[:command_path] = "/usr/local/bin/"
+  
+  config.paperclip_defaults = {
+  :storage => :s3,
+  :bucket => 'S3_BUCKET_NAME'
+
+  }
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
