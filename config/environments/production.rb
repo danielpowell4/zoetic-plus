@@ -11,6 +11,7 @@ Rails.application.configure do
       :enable_starttls_auto => true
       }
 
+  config.action_mailer.default_url_options = { :host => 'zoetic-plus.herokuapp.com' }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
 
